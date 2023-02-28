@@ -1,0 +1,22 @@
+quarkus:
+  http:
+    root-path: /api
+  datasource:
+    db-kind: postgresql
+    username: postgres
+    password: postgres
+    jdbc:
+      url: jdbc:postgresql://localhost:5432/crud-example
+      max-size: 16
+  log:
+    level: INFO
+  hibernate-orm:
+    database:
+      generation: none
+      default-schema: dbo
+    log:
+      sql: true
+  flyway:
+    migrate-at-start: true
+    schemas: dbo
+    locations: db/migration
